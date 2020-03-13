@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS myemployee_db;
-CREATE DATABASE myemployee_db;
+-- DROP DATABASE IF EXISTS myemployee_db;
+-- CREATE DATABASE myemployee_db;
 
 USE myemployee_db;
 INSERT INTO departments (dept_id, dept_name) VALUES

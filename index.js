@@ -3,6 +3,7 @@ const app = express()
 const prompt = require('inquirer').createPromptModule()
 const mysql = require('mysql')
 const consoletable = require('console.table')
+const join = require('path')
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -21,7 +22,7 @@ myemployee = () => {
     type: 'list',
     name: 'options',
     message: "What would you like to do?",
-    choices: ['View All Employees', 'View All Department', 'View Roles', 'Add Employee', 'Add Role', 'Add Department', 'Update Employee Role']
+    choices: ['View All Employees', 'View All Departments', 'View Roles', 'Add Employee', 'Add Role', 'Add Department', 'Update Employee Role']
   })
     .then((options) => {
       newFunction(options)
@@ -95,12 +96,13 @@ addEmployee = () => {
       type: 'list',
       name: 'department',
       message: 'Department:',
-      choices: ['Engineering', 'HR', 'IT', 'Accounting', 'Sales']
+      choices: ['Development', 'Implementation', 'Research', 'Training', 'Production']
     },
     {
       type: 'input',
-      name: 'role',
-      message: "Enter employee's role:"
+      name: 'role title',
+      message: "Enter employee's role:",
+      choices: ['Software Engineer', 'Research Analyst', 'Junior Developer', 'Intern', 'Tech Support Specialist', 'Account Executive', 'Senior Developer', 'Data Analyst', 'UI UX Designer',]
     },
     {
       type: 'input',

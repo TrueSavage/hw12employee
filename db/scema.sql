@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS
-myemployee_db;
+-- DROP DATABASE IF EXISTS
+-- myemployee_db;
 
-CREATE DATABASE myemployee_db;
+-- CREATE DATABASE myemployee_db;
 
 USE myemployee_db;
 
