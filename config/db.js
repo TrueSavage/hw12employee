@@ -1,4 +1,4 @@
-const { createConnection } = require('mysql2')
+const { createConnection } = require('mysql2');
 
 const connection = createConnection({
   host: 'localhost',
@@ -6,6 +6,10 @@ const connection = createConnection({
   user: 'root',
   password: 'rootroot',
   database: 'myemployee_db'
-})
+});
+// app.listen(3001, () => {
+//   console.log("server is up and running")
+// })
+
 
 module.exports = connection

@@ -1,20 +1,10 @@
-const express = require('express')
-const app = express()
-const prompt = require('inquirer').createPromptModule()
-const mysql = require('mysql')
-const consoletable = require('console.table')
-const join = require('path')
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  port: 3306,
-  user: 'root',
-  password: 'rootroot',
-  database: 'myemployee_db'
-})
-app.listen(3000, () => {
-  console.log("server is up and running")
-})
+const express = require('express');
+const app = express();
+const db = require('./config/db.js');
+const prompt = require('inquirer').createPromptModule();
+const mysql = require('mysql');
+const consoletable = require('console.table');
+const join = require('path');
 
 myemployee = () => {
 
@@ -25,7 +15,7 @@ myemployee = () => {
     choices: ['View All Employees', 'View All Departments', 'View Roles', 'Add Employee', 'Add Role', 'Add Department', 'Update Employee Role']
   })
     .then((options) => {
-      newFunction(options)
+
       switch (options) {
         case 'View All Employees':
           viewAllEmployees()
@@ -60,7 +50,7 @@ viewAllEmployees = () => {
   connection.query(query, (err, res) => {
     if (err) return err
     console.table(res)
-    myemployee_db()
+    myemployee()
   })
 }
 
@@ -68,7 +58,7 @@ viewDepartment = () => {
   const query = 'SELECT * FROM department'
   connection.query(query, (err, res) => {
     console.table(res)
-    myemployee_db()
+    myemployee()
   })
 }
 
@@ -76,7 +66,7 @@ viewRoles = () => {
   const query = 'SELECT * FROM role'
   connection.query(query, (err, res) => {
     console.table(res)
-    myemployee_db()
+    myemployee()
   })
 }
 
@@ -85,12 +75,12 @@ addEmployee = () => {
     {
       type: 'input',
       name: 'first_name',
-      message: 'First name:'
+      message: 'First Name:'
     },
     {
       type: 'input',
       name: 'last_name',
-      message: 'Last name:'
+      message: 'Last Name:'
     },
     {
       type: 'list',
