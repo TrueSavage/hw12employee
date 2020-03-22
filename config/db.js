@@ -8,11 +8,12 @@ const connection = createConnection({
   database: 'myemployee_db'
 })
 {
-app.set('port', process.env.PORT || 3003);
-app.listen(3003, () => {
-  console.log("server is up and running")
+  var port = 8080
+  app.listen(port);
+  console.log(`Listening on port ${port}`);
+
 })
-}
+
 
 
 module.exports = connection
