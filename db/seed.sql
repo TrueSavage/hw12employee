@@ -1,7 +1,7 @@
--- DROP DATABASE IF EXISTS myemployee_db;
--- CREATE DATABASE myemployee_db;
+DROP DATABASE IF EXISTS employee_db;
+CREATE DATABASE employee_db;
 
-USE myemployee_db;
+USE employee_db;
 INSERT INTO departments (dept_id, dept_name) VALUES
 (1, 'Research'),
 (2, 'Development'),
@@ -10,7 +10,7 @@ INSERT INTO departments (dept_id, dept_name) VALUES
 (5, 'Management'),
 (6, 'Training');
 
-USE myemployee_db;
+USE employee_db;
 INSERT INTO roles (role_id, role_title, salary, dept_id) VALUES
 (1, 'UI UX Designer', 105500, 2),
 (2, 'Systems Analyst ', 145000, 3),
@@ -23,7 +23,7 @@ INSERT INTO roles (role_id, role_title, salary, dept_id) VALUES
 (9, 'Tech Support Specialist', 55000, 4),
 (10, 'Intern', 45000, 6);
 
-USE myemployee_db;
+USE employee_db;
 INSERT INTO employees (id, first_name, last_name, role_title) VALUES
 (1, 'Steve', 'Jobs', 'Research Analyst'),
 (2, 'Bill', 'Gates', 'Intern'),

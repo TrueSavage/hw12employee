@@ -1,8 +1,8 @@
 {
   "name": "hw12employee",
   "version": "1.0.0",
-  "description": "# Unit 12 MySQL Homework: Employee Tracker",
-  "main": "index.js",
+  "description": "homework 12",
+  "main": "app.js",
   "dependencies": {
     "console.table": "^0.10.0",
     "dotenv": "^8.2.0",
@@ -15,8 +15,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

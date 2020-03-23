@@ -1,9 +1,9 @@
--- DROP DATABASE IF EXISTS
--- myemployee_db;
+DROP DATABASE IF EXISTS
+employee_db;
 
--- CREATE DATABASE myemployee_db;
+CREATE DATABASE employee_db;
 
-USE myemployee_db;
+USE employee_db;
 
 CREATE TABLE departments (
   dept_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE departments (
 
 
 
-USE myemployee_db;
+USE employee_db;
 CREATE TABLE roles (
   role_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   role_title VARCHAR(30) UNIQUE,
@@ -21,7 +21,7 @@ CREATE TABLE roles (
   FOREIGN KEY (dept_id) REFERENCES departments(dept_id)
 );
 
-USE myemployee_db;
+USE employee_db;
 CREATE TABLE employees (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   first_name VARCHAR(30) NOT NULL,

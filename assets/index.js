@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const db = require('./app')
 // // const db = require('./config/db.js');
 // const prompt = require('inquirer').createPromptModule();
 // const mysql = require('mysql');
@@ -14,7 +15,7 @@ const connection = mysql.createConnection({
   port: 3306,
   user: 'root',
   password: 'rootroot',
-  database: 'myemployee_db'
+  database: 'employee_db'
 })
 
 var port = 8080
@@ -27,7 +28,7 @@ console.log(`Listening on port ${port}`);
 //   console.log("server is up and running")
 // },
 
-  myemployee = () => {
+  employee = () => {
 
     prompt({
       type: 'list',
@@ -71,7 +72,7 @@ console.log(`Listening on port ${port}`);
     connection.query(query, (err, res) => {
       if (err) return err
       console.table(res)
-      myemployee()
+      employee()
     })
   },
 
@@ -79,7 +80,7 @@ console.log(`Listening on port ${port}`);
     const query = 'SELECT * FROM department'
     connection.query(query, (err, res) => {
       console.table(res)
-      myemployee()
+      employee()
     })
   },
 
@@ -87,7 +88,7 @@ console.log(`Listening on port ${port}`);
     const query = 'SELECT * FROM role'
     connection.query(query, (err, res) => {
       console.table(res)
-      myemployee()
+      employee()
     })
   },
 
@@ -123,7 +124,7 @@ console.log(`Listening on port ${port}`);
     )
   },
 
-  myemployee()
+  employee()
 
 function newFunction(options) {
   console.table(options);
