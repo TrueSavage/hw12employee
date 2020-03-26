@@ -1,6 +1,6 @@
 const prompt = require('inquirer').createPromptModule()
 const dotenv = require('dotenv')
-const db = require('./config/db.js')
+// const db = require('./config/db.js')
 const cTable = require('console.table');
 
 
@@ -28,7 +28,7 @@ let dbChoices = [
 
 
 async function startQuestions() {
-  const initPrompt = await prompt([{
+  const initPrompt = prompt([{
     type: 'list',
     name: 'choice',
     message: questions1[0],
@@ -38,50 +38,50 @@ async function startQuestions() {
     .then(({ choice }) => {
       switch (choice) {
         case 'View All Employees':
-          viewAllEmployee()
-          break
+          viewAllEmployee();
+          break;
         case 'View All Employees by Department':
-          viewAllEmployeeByDepartment()
-          break
+          viewAllEmployeeByDepartment();
+          break;
         case 'View All Employees by Manager':
-          viewAllEmployeeByManager()
-          break
+          viewAllEmployeeByManager();
+          break;
         case 'Add Employee':
-          askToAddEmployee()
-          break
+          askToAddEmployee();
+          break;
         case 'Remove Employee':
-          askToRemoveEmployee()
-          break
+          askToRemoveEmployee();
+          break;
         case 'Update Employee Role':
-          askToUpdateEmployeeRole()
-          break
+          askToUpdateEmployeeRole();
+          break;
         case 'Update Employee Manager':
-          askToUpdateEmployeeManager()
-          break
+          askToUpdateEmployeeManager();
+          break;
         case 'View All Roles':
-          viewAllRoles()
-          break
+          viewAllRoles();
+          break;
         case 'Add A Role':
-          askToAddRole()
-          break
+          askToAddRole();
+          break;
         case 'Add A Department':
-          askToCreateDepartment()
-          break
+          askToCreateDepartment();
+          break;
         case 'Remove A Department':
-          askToRemoveDepartment()
-          break
+          askToRemoveDepartment();
+          break;
         case 'View All Departments':
-          viewAllDepartments()
-          break
+          viewAllDepartments();
+          break;
         case 'View the total utilized budget of a department':
-          viewDepartmentTotals()
-          break
+          viewDepartmentTotals();
+          break;
         case 'Quit':
-          db.end()
-          break
+          db.end();
+          break;
         default:
-          db.end()
-          break
+          db.end();
+          break;
       }
 
 

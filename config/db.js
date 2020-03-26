@@ -6,5 +6,9 @@ Const connection = createConnection({
   user: 'root',
   password: 'rootroot',
   database: 'employees_db'
-})
+});
+console.log("system is running")
 module.exports = connection
+
+
+
