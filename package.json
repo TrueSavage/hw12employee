@@ -2,7 +2,7 @@
   "name": "hw12employee",
   "version": "1.0.0",
   "description": "homework 12",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "console.table": "^0.10.0",
     "dotenv": "^8.2.0",
